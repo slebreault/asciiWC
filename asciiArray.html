@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		//Create two empty arrays.
+		//The first will be populated by the user input.
+		//The second will be created after accessing each index in the 
+		//first array and substituting the letter in the word for the ascii code 
+		//and adding it to the second array.
+		var letterArray = [];
+		var asciiArray = [];
+
+		//Custom function that accepts a user input
+		function asciiWordConvert() {
+			var userInput = window.prompt("Please enter one English lower case word.","Enter word here.");
+
+			//makes the user input lower case
+			userInput = userInput.toLowerCase();
+
+			//uses an array method that splits the string into individual letters and "adds" it to the first array
+			letterArray = userInput.split("");
+
+			//uses the do Array function (creates the second array after switching on the contents found at index #)
+			doArray(userInput);
+
+			//uses the show on screen function (displays the second array)
+			ShowOnScreen(asciiArray);
+
+			//uses the console.log function (displays the first array in the console)
+			console.log(letterArray);
+		}
+		
+		//function that loops through the first arrays length and switches on the value at the index #
+		//adds the ascii code to the array
+		try {
+			function doArray() {
+				for(i = 0; i < letterArray.length; i++) {
+					switch (letterArray[i]) {
+						case 'a':
+							asciiArray.push(97);
+							break;
+						case 'b':
+							asciiArray.push(98);
+							break;
+						case 'c':
+							asciiArray.push(99);
+							break;
+						case 'd':
+							asciiArray.push(100);
+							break;
+						case 'e':
+							asciiArray.push(101);
+							break;
+						case 'f':
+							asciiArray.push(102);
+							break;
+						case 'g':
+							asciiArray.push(103);
+							break;
+						case 'h':
+							asciiArray.push(104);
+							break;
+						case 'i':
+							asciiArray.push(105);
+							break;
+						case 'j':
+							asciiArray.push(106);
+							break;	
+						case 'k':
+							asciiArray.push(107);
+							break;
+						case 'l':
+							asciiArray.push(108);
+							break;
+						case 'm':
+							asciiArray.push(109);
+							break;
+						case 'n':
+							asciiArray.push(110);
+							break;
+						case 'o':
+							asciiArray.push(111);
+							break;
+						case 'p':
+							asciiArray.push(112);
+							break;
+						case 'q':
+							asciiArray.push(113);
+							break;
+						case 'r':
+							asciiArray.push(114);
+							break;
+						case 's':
+							asciiArray.push(115);
+							break;
+						case 't':
+							asciiArray.push(116);
+							break;
+						case 'u':
+							asciiArray.push(117);
+							break;
+						case 'v':
+							asciiArray.push(118);
+							break;
+						case 'w':
+							asciiArray.push(119);
+							break;
+						case 'x':
+							asciiArray.push(120);
+							break;
+						case 'y':
+							asciiArray.push(121);
+							break;
+						case 'z':
+							asciiArray.push(122);
+							break;	
+						default:
+							alert("Please input a lowercase letter.");
+							break;
+					}
+				}
+			}
+		} catch(err) {
+		  alert("err");
+		}
+
+
+		function ShowOnScreen(asciiArray)
+		{
+			document.getElementById("DisplayResultsArea").innerHTML=asciiArray;
+		}
+
+		//function used to clear the array after every button click
+		function clearArray() {
+			asciiArray = [];
+		}
+
+	</script>
+</head>
+
+<body>
+	<!--This code sets the "style" of every button in the body of this HTML documment. In this case, we just set the width.-->
+	<style type="text/css">  
+		button {width:200px}  
+	  </style>  
+
+	<!--Create a button that you can use to execute your JavaScript code.
+		it calls a function to convert text to ascii. It also calls a function to clear the created array-->
+	<button onclick="asciiWordConvert(), clearArray()">ASCII Word Converter</button></br>
+	
+	<!--This code creates a display area for results. It is popoulated by the function "ShowOnScreen", above.-->
+	<p id="DisplayResultsArea"  style="font-family:courier;color:blue;margin-left:20px;"></p>
+</body>
+</html>
